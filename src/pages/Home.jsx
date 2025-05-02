@@ -225,7 +225,7 @@ const Home = () => {
       </section>
 
       {/* AI-Powered Cognitive Insights */}
-      <section className="py-20 bg-gray-50">
+      {/* <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-3xl font-bold mb-4 text-gray-900">Advanced AI Analysis</h2>
@@ -319,7 +319,7 @@ const Home = () => {
       </section>
 
       {/* Who It's For */}
-      <section className="py-20 bg-white" id="audience">
+      {/* <section className="py-20 bg-white" id="audience">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl font-bold mb-4 text-gray-900">Who Benefits from Kizunabot</h2>
@@ -351,10 +351,10 @@ const Home = () => {
             />
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Our Services */}
-      <section className="py-20 bg-gray-50" id="services">
+      {/* <section className="py-20 bg-gray-50" id="services">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl font-bold mb-4 text-gray-900">Our Comprehensive Services</h2>
@@ -395,10 +395,10 @@ const Home = () => {
             />
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
-      <section className="py-16 bg-indigo-700 text-white">
+      {/* <section className="py-16 bg-indigo-700 text-white">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-6">Ready to Experience Kizunabot?</h2>
@@ -415,10 +415,10 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white pt-16 pb-8">
+      {/* <footer className="bg-gray-900 text-white pt-16 pb-8">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-10 mb-12">
             <div>
@@ -491,7 +491,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </footer>
+      </footer> */} 
     </div>
   );
 };
