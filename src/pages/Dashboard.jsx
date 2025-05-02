@@ -269,7 +269,7 @@ const Dashboard = () => {
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">Analysis Results</h2>
                 <div className="mb-6">
                   <h3 className="text-lg font-semibold text-gray-700">Transcribed Text</h3>
-                  <pre className="bg-gray-100 rounded-lg p-4 whitespace-pre-wrap text-gray-900">{scores.transcribed_text}</pre>
+                  <pre className="bg-gray-100 rounded-lg p-4 whitespace-pre-wrap text-gray-900">{scores.transcribedText}</pre>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="bg-gray-50 rounded-lg p-4">
