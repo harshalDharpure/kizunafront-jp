@@ -26,8 +26,8 @@ const Home = () => {
   };
 
   const videoOptions = {
-    height: '100%',
-    width: '100%',
+    height: '60%',
+    width: '60%',
     playerVars: { 
       autoplay: 0,
       modestbranding: 1,
@@ -38,34 +38,34 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-white flex flex-col font-sans">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-indigo-900 to-indigo-700 text-white pt-24 pb-32">
+      <section className="relative bg-gradient-to-br from-orange-900 to-orange-700 text-white pt-24 pb-32">
         {/* Background noise texture */}
         <div className="absolute inset-0 opacity-20 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
         
         {/* Content */}
         <div className="relative z-10 container mx-auto px-6 flex flex-col items-center">
           {/* Tagline */}
-          <div className="inline-flex items-center bg-indigo-800/30 border border-indigo-700 rounded-full px-4 py-1 mb-6">
+          <div className="inline-flex items-center bg-orange-800/30 border border-orange-700 rounded-full px-4 py-1 mb-6">
             <ShieldCheckIcon className="h-5 w-5 mr-2" />
             <span className="text-sm font-medium">Privacy-first cognitive analysis</span>
           </div>
 
           {/* Main heading */}
           <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight text-center">
-            Transforming <span className="text-indigo-300">Speech</span> into <br />
-            Cognitive <span className="text-indigo-300">Insights</span>
+            Transforming <span className="text-orange-300">Speech</span> into <br />
+            Cognitive <span className="text-orange-300">Insights</span>
           </h1>
 
           {/* Subheading */}
-          <p className="text-xl text-indigo-100 mb-10 max-w-2xl mx-auto text-center">
-            Kizunabot detects early signs of cognitive decline through natural conversation patterns.
+          <p className="text-xl text-orange-100 mb-10 max-w-2xl mx-auto text-center">
+            Detect cognitive changes through natural conversation patterns.
           </p>
 
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
             <Link 
               to="/signup"
-              className="bg-white text-indigo-700 px-8 py-3 rounded-full font-semibold shadow hover:bg-indigo-50 transition flex items-center justify-center"
+              className="bg-white text-orange-700 px-8 py-3 rounded-full font-semibold shadow hover:bg-orange-50 transition flex items-center justify-center"
             >
               Get Started
               <ArrowRightIcon className="h-5 w-5 ml-2" />
@@ -107,22 +107,14 @@ const Home = () => {
       {/* Trust Indicators */}
       <div className="relative z-20 -mt-10">
         <div className="container mx-auto px-6">
-          <div className="bg-white rounded-xl shadow-lg p-6 grid grid-cols-2 md:grid-cols-4 gap-6 divide-x divide-gray-100">
+          <div className="bg-white rounded-xl shadow-lg p-6 grid grid-cols-2 gap-6 divide-x divide-gray-100">
             <div className="text-center px-4">
-              <div className="text-3xl font-bold text-indigo-700">100%</div>
+              <div className="text-3xl font-bold text-orange-700">100%</div>
               <div className="text-gray-600 mt-1">Privacy Focused</div>
             </div>
             <div className="text-center px-4">
-              <div className="text-3xl font-bold text-indigo-700">24/7</div>
+              <div className="text-3xl font-bold text-orange-700">24/7</div>
               <div className="text-gray-600 mt-1">Passive Monitoring</div>
-            </div>
-            <div className="text-center px-4">
-              <div className="text-3xl font-bold text-indigo-700">95%</div>
-              <div className="text-gray-600 mt-1">Accuracy</div>
-            </div>
-            <div className="text-center px-4">
-              <div className="text-3xl font-bold text-indigo-700">10K+</div>
-              <div className="text-gray-600 mt-1">Conversations Analyzed</div>
             </div>
           </div>
         </div>
@@ -133,12 +125,10 @@ const Home = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-              Natural Speech Analysis for <span className="text-indigo-600">Cognitive Wellness</span>
+              Natural Speech Analysis for <span className="text-orange-600">Cognitive Wellness</span>
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-              Kizunabot is an AI-powered conversational tool that passively monitors natural speech patterns to identify early cognitive changes. 
-              Our privacy-first approach provides valuable insights without clinical intrusions, helping individuals, caregivers, and professionals 
-              detect potential concerns through everyday interactions.
+              AI-powered tool that monitors speech patterns to identify early cognitive changes through everyday interactions.
             </p>
           </div>
         </div>
@@ -149,7 +139,7 @@ const Home = () => {
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="lg:w-1/2">
-              <div className="bg-indigo-100 rounded-2xl p-8 shadow-inner">
+              <div className="bg-orange-100 rounded-2xl p-8 shadow-inner">
                 <div className="aspect-w-16 aspect-h-9 bg-white rounded-lg shadow overflow-hidden">
                   <img 
                     src="/grandma2.png" 
@@ -161,27 +151,27 @@ const Home = () => {
             </div>
             <div className="lg:w-1/2">
               <h2 className="text-3xl font-bold mb-6 text-gray-900">
-                Why <span className="text-indigo-600">Kizunabot</span> Stands Out
+                Why <span className="text-orange-600">Kizunabot</span> Stands Out
               </h2>
               <p className="text-gray-600 mb-8 leading-relaxed">
                 Traditional cognitive screenings are often clinical, infrequent, and can be stressful. Kizunabot revolutionizes this approach by analyzing everyday conversations in a natural, unobtrusive way.
               </p>
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <div className="flex-shrink-0 bg-indigo-100 rounded-full p-2 mt-1 mr-4">
-                    <HeartIcon className="h-5 w-5 text-indigo-700" />
+                  <div className="flex-shrink-0 bg-orange-100 rounded-full p-2 mt-1 mr-4">
+                    <HeartIcon className="h-5 w-5 text-orange-700" />
                   </div>
                   <span className="text-gray-700">Continuous monitoring without disrupting daily life</span>
                 </li>
                 <li className="flex items-start">
-                  <div className="flex-shrink-0 bg-indigo-100 rounded-full p-2 mt-1 mr-4">
-                    <DevicePhoneMobileIcon className="h-5 w-5 text-indigo-700" />
+                  <div className="flex-shrink-0 bg-orange-100 rounded-full p-2 mt-1 mr-4">
+                    <DevicePhoneMobileIcon className="h-5 w-5 text-orange-700" />
                   </div>
                   <span className="text-gray-700">Accessible through everyday devices</span>
                 </li>
                 <li className="flex items-start">
-                  <div className="flex-shrink-0 bg-indigo-100 rounded-full p-2 mt-1 mr-4">
-                    <AcademicCapIcon className="h-5 w-5 text-indigo-700" />
+                  <div className="flex-shrink-0 bg-orange-100 rounded-full p-2 mt-1 mr-4">
+                    <AcademicCapIcon className="h-5 w-5 text-orange-700" />
                   </div>
                   <span className="text-gray-700">Backed by cutting-edge NLP research</span>
                 </li>
@@ -197,28 +187,28 @@ const Home = () => {
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl font-bold mb-4 text-gray-900">Key Cognitive Indicators</h2>
             <p className="text-gray-600">
-              Kizunabot analyzes multiple dimensions of speech to provide comprehensive insights into cognitive health.
+              Analyzing multiple dimensions of speech for comprehensive cognitive health insights.
             </p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
             <FeatureCard
-              icon={<ChartBarIcon className="h-10 w-10 text-indigo-600" />}
+              icon={<ChartBarIcon className="h-10 w-10 text-orange-600" />}
               title="Lexical Diversity"
-              description="Measures vocabulary richness and complexity to assess cognitive flexibility and verbal fluency."
-              color="bg-indigo-50"
+              description="Measures vocabulary richness and complexity."
+              color="bg-orange-50"
             />
             <FeatureCard
-              icon={<ChatBubbleLeftRightIcon className="h-10 w-10 text-indigo-600" />}
+              icon={<ChatBubbleLeftRightIcon className="h-10 w-10 text-orange-600" />}
               title="Conversational Flow"
-              description="Analyzes topic maintenance, coherence, and logical progression in conversations."
-              color="bg-indigo-50"
+              description="Analyzes topic maintenance and coherence."
+              color="bg-orange-50"
             />
             <FeatureCard
-              icon={<LightBulbIcon className="h-10 w-10 text-indigo-600" />}
+              icon={<LightBulbIcon className="h-10 w-10 text-orange-600" />}
               title="Memory Indicators"
-              description="Detects patterns of repetition, word-finding difficulties, and recall challenges."
-              color="bg-indigo-50"
+              description="Detects patterns of repetition and recall."
+              color="bg-orange-50"
             />
           </div>
         </div>
@@ -261,48 +251,48 @@ const Home = () => {
                   />
                 </div>
               </div>
-              <div className="bg-indigo-50 p-10 flex items-center justify-center">
+              <div className="bg-orange-50 p-10 flex items-center justify-center">
                 <div className="relative w-full max-w-md">
-                  <div className="absolute -top-6 -left-6 w-32 h-32 bg-indigo-200 rounded-full opacity-30"></div>
-                  <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-indigo-300 rounded-full opacity-30"></div>
+                  <div className="absolute -top-6 -left-6 w-32 h-32 bg-orange-200 rounded-full opacity-30"></div>
+                  <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-orange-300 rounded-full opacity-30"></div>
                   <div className="relative bg-white rounded-xl shadow-lg p-6">
                     <div className="flex justify-between items-center mb-6">
                       <h4 className="font-medium text-gray-900">Cognitive Health Dashboard</h4>
-                      <span className="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded">Sample</span>
+                      <span className="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">Sample</span>
                     </div>
                     <div className="space-y-4">
                       <div className="flex items-center justify-between">
                         <span className="text-sm text-gray-600">Lexical Diversity</span>
                         <div className="w-32 bg-gray-200 rounded-full h-2.5">
-                          <div className="bg-indigo-600 h-2.5 rounded-full" style={{width: '78%'}}></div>
+                          <div className="bg-orange-600 h-2.5 rounded-full" style={{width: '78%'}}></div>
                         </div>
                       </div>
                       <div className="flex items-center justify-between">
                         <span className="text-sm text-gray-600">Topic Coherence</span>
                         <div className="w-32 bg-gray-200 rounded-full h-2.5">
-                          <div className="bg-indigo-600 h-2.5 rounded-full" style={{width: '65%'}}></div>
+                          <div className="bg-orange-600 h-2.5 rounded-full" style={{width: '65%'}}></div>
                         </div>
                       </div>
                       <div className="flex items-center justify-between">
                         <span className="text-sm text-gray-600">Word Recall</span>
                         <div className="w-32 bg-gray-200 rounded-full h-2.5">
-                          <div className="bg-indigo-600 h-2.5 rounded-full" style={{width: '82%'}}></div>
+                          <div className="bg-orange-600 h-2.5 rounded-full" style={{width: '82%'}}></div>
                         </div>
                       </div>
                       <div className="flex items-center justify-between">
                         <span className="text-sm text-gray-600">Repetition</span>
                         <div className="w-32 bg-gray-200 rounded-full h-2.5">
-                          <div className="bg-indigo-600 h-2.5 rounded-full" style={{width: '45%'}}></div>
+                          <div className="bg-orange-600 h-2.5 rounded-full" style={{width: '45%'}}></div>
                         </div>
                       </div>
                     </div>
                     <div className="mt-8 pt-6 border-t border-gray-100">
                       <div className="text-xs text-gray-500 mb-2">Last 30 Days Trend</div>
-                      <div className="h-32 bg-indigo-50 rounded-lg flex items-end justify-between px-2">
+                      <div className="h-32 bg-orange-50 rounded-lg flex items-end justify-between px-2">
                         {[20, 35, 50, 65, 45, 60, 78].map((value, index) => (
                           <div key={index} className="w-6 flex flex-col items-center">
                             <div 
-                              className="w-4 bg-indigo-600 rounded-t-sm" 
+                              className="w-4 bg-orange-600 rounded-t-sm" 
                               style={{height: `${value}%`}}
                             ></div>
                             <div className="text-[8px] text-gray-500 mt-1">{['M', 'T', 'W', 'T', 'F', 'S', 'S'][index]}</div>
@@ -330,22 +320,22 @@ const Home = () => {
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <AudienceCard 
-              icon={<UserGroupIcon className="h-8 w-8 text-indigo-600" />}
+              icon={<UserGroupIcon className="h-8 w-8 text-orange-600" />}
               title="Individuals"
               description="Those seeking to monitor their own cognitive health proactively"
             />
             <AudienceCard 
-              icon={<HeartIcon className="h-8 w-8 text-indigo-600" />}
+              icon={<HeartIcon className="h-8 w-8 text-orange-600" />}
               title="Caregivers"
               description="Family members supporting loved ones with potential cognitive concerns"
             />
             <AudienceCard 
-              icon={<AcademicCapIcon className="h-8 w-8 text-indigo-600" />}
+              icon={<AcademicCapIcon className="h-8 w-8 text-orange-600" />}
               title="Professionals"
               description="Healthcare providers and senior care specialists"
             />
             <AudienceCard 
-              icon={<BeakerIcon className="h-8 w-8 text-indigo-600" />}
+              icon={<BeakerIcon className="h-8 w-8 text-orange-600" />}
               title="Researchers"
               description="Scientists studying cognitive health and aging"
             />
@@ -376,7 +366,7 @@ const Home = () => {
                 "Ongoing NLP Research Publications"
               ]}
               buttonLabel="Explore Research"
-              buttonStyle="text-indigo-600 font-medium hover:text-indigo-800 transition flex items-center group"
+              buttonStyle="text-orange-600 font-medium hover:text-orange-800 transition flex items-center group"
               arrowIcon={<ArrowRightIcon className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />}
             />
             <ServiceCard
@@ -391,22 +381,22 @@ const Home = () => {
                 "Custom Research Solutions"
               ]}
               buttonLabel="Contact Our Team"
-              buttonStyle="bg-indigo-600 text-white px-6 py-3 rounded-full font-medium hover:bg-indigo-700 transition shadow-sm"
+              buttonStyle="bg-orange-600 text-white px-6 py-3 rounded-full font-medium hover:bg-orange-700 transition shadow-sm"
             />
           </div>
         </div>
       </section> */}
 
       {/* CTA Section */}
-      {/* <section className="py-16 bg-indigo-700 text-white">
+      {/* <section className="py-16 bg-orange-700 text-white">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-6">Ready to Experience Kizunabot?</h2>
-            <p className="text-xl text-indigo-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto">
               Discover how Kizunabot can provide valuable insights into cognitive health through natural conversations.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-indigo-700 px-8 py-3 rounded-full font-semibold shadow hover:bg-indigo-50 transition">
+              <button className="bg-white text-orange-700 px-8 py-3 rounded-full font-semibold shadow hover:bg-orange-50 transition">
                 Request Demo
               </button>
               <button className="border-2 border-white/30 px-8 py-3 rounded-full font-medium hover:bg-white/10 transition">
@@ -423,7 +413,7 @@ const Home = () => {
           <div className="grid md:grid-cols-4 gap-10 mb-12">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <div className="w-8 h-8 bg-indigo-600 rounded-full flex items-center justify-center">
+                <div className="w-8 h-8 bg-orange-600 rounded-full flex items-center justify-center">
                   <ChatBubbleLeftRightIcon className="h-5 w-5 text-white" />
                 </div>
                 <span className="text-xl font-bold">Kizunabot</span>
@@ -513,7 +503,7 @@ function InsightItem({ number, title, description }) {
   return (
     <div className="flex">
       <div className="flex-shrink-0 mr-6">
-        <div className="flex items-center justify-center w-12 h-12 rounded-full bg-indigo-100 text-indigo-700 font-bold">
+        <div className="flex items-center justify-center w-12 h-12 rounded-full bg-orange-100 text-orange-700 font-bold">
           {number}
         </div>
       </div>
@@ -528,7 +518,7 @@ function InsightItem({ number, title, description }) {
 function AudienceCard({ icon, title, description }) {
   return (
     <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition h-full">
-      <div className="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center mb-4">
+      <div className="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center mb-4">
         {icon}
       </div>
       <h3 className="text-lg font-semibold mb-2 text-gray-900">{title}</h3>
@@ -541,8 +531,8 @@ function ServiceCard({ title, icon: Icon, description, items, buttonLabel, butto
   return (
     <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition h-full flex flex-col">
       <div className="p-8 pb-0">
-        <div className="w-14 h-14 rounded-xl bg-indigo-100 flex items-center justify-center mb-6">
-          <Icon className="h-6 w-6 text-indigo-600" />
+        <div className="w-14 h-14 rounded-xl bg-orange-100 flex items-center justify-center mb-6">
+          <Icon className="h-6 w-6 text-orange-600" />
         </div>
         <h3 className="text-2xl font-semibold mb-3 text-gray-900">{title}</h3>
         <p className="text-gray-600 mb-6">{description}</p>
@@ -550,7 +540,7 @@ function ServiceCard({ title, icon: Icon, description, items, buttonLabel, butto
       <ul className="px-8 space-y-3 mb-8">
         {items.map((item, idx) => (
           <li key={idx} className="flex items-start">
-            <svg className="flex-shrink-0 h-5 w-5 text-indigo-500 mt-0.5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="flex-shrink-0 h-5 w-5 text-orange-500 mt-0.5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
             <span className="text-gray-700">{item}</span>

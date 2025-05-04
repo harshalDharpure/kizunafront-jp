@@ -58,8 +58,8 @@ const GeminiInsights = ({ analysisData, recordingId }) => {
   const InsightSection = ({ title, icon: Icon, content }) => (
     <div className="bg-white rounded-xl p-6 shadow-sm mb-4">
       <div className="flex items-center mb-4">
-        <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center mr-3">
-          <Icon className="h-5 w-5 text-indigo-600" />
+        <div className="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center mr-3">
+          <Icon className="h-5 w-5 text-orange-600" />
         </div>
         <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
       </div>
@@ -78,7 +78,7 @@ const GeminiInsights = ({ analysisData, recordingId }) => {
 
       {loading && (
         <div className="text-center py-8">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-600 mx-auto"></div>
           <p className="mt-4 text-gray-600">Analyzing your communication style...</p>
         </div>
       )}
@@ -88,7 +88,7 @@ const GeminiInsights = ({ analysisData, recordingId }) => {
           <p className="text-red-600">{error}</p>
           <button
             onClick={fetchInsights}
-            className="mt-4 text-indigo-600 hover:text-indigo-700 font-medium"
+            className="mt-4 text-orange-600 hover:text-orange-700 font-medium"
           >
             Try Again
           </button>

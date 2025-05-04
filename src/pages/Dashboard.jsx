@@ -181,7 +181,7 @@ const Dashboard = () => {
                       </div>
                       <button
                         onClick={() => handleViewAnalysis(recording)}
-                        className="text-indigo-600 hover:text-indigo-700 font-medium"
+                        className="text-orange-600 hover:text-orange-700 font-medium"
                       >
                         View Analysis
                       </button>
@@ -198,7 +198,7 @@ const Dashboard = () => {
               <div className="flex flex-col items-center">
                 <div className="relative">
                   <div className={`w-16 h-16 rounded-full flex items-center justify-center ${
-                    isRecording ? 'bg-red-100' : 'bg-indigo-100'
+                    isRecording ? 'bg-red-100' : 'bg-orange-100'
                   }`}>
                     {isRecording ? (
                       <StopIcon 
@@ -207,7 +207,7 @@ const Dashboard = () => {
                       />
                     ) : (
                       <MicrophoneIcon 
-                        className="h-8 w-8 text-indigo-600 cursor-pointer" 
+                        className="h-8 w-8 text-orange-600 cursor-pointer" 
                         onClick={startRecording}
                       />
                     )}
@@ -229,7 +229,7 @@ const Dashboard = () => {
               <div className="flex flex-col items-center">
                 <ArrowUpTrayIcon className="h-12 w-12 text-gray-400" />
                 <div className="mt-4">
-                  <label className="cursor-pointer bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700">
+                  <label className="cursor-pointer bg-orange-600 text-white px-4 py-2 rounded-md hover:bg-orange-700">
                     <span>Select Audio File</span>
                     <input
                       type="file"
@@ -256,7 +256,7 @@ const Dashboard = () => {
                 className={`px-4 py-2 rounded-md text-white ${
                   isUploading || !file
                     ? 'bg-gray-400 cursor-not-allowed'
-                    : 'bg-indigo-600 hover:bg-indigo-700'
+                    : 'bg-orange-600 hover:bg-orange-700'
                 }`}
               >
                 {isUploading ? 'Analyzing...' : 'Analyze Recording'}
@@ -273,35 +273,35 @@ const Dashboard = () => {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="bg-gray-50 rounded-lg p-4">
-                    <ChartBarIcon className="h-6 w-6 text-indigo-600 mr-2 inline" />
+                    <ChartBarIcon className="h-6 w-6 text-orange-600 mr-2 inline" />
                     <span className="font-semibold">Polarity Score:</span>
-                    <span className="ml-2 text-indigo-600 font-bold">{scores.polarityScore?.toFixed(2)}</span>
+                    <span className="ml-2 text-orange-600 font-bold">{scores.polarityScore?.toFixed(2)}</span>
                   </div>
                   <div className="bg-gray-50 rounded-lg p-4">
-                    <ChartBarIcon className="h-6 w-6 text-indigo-600 mr-2 inline" />
+                    <ChartBarIcon className="h-6 w-6 text-orange-600 mr-2 inline" />
                     <span className="font-semibold">Subjectivity Score:</span>
-                    <span className="ml-2 text-indigo-600 font-bold">{scores.subjectivityScore?.toFixed(2)}</span>
+                    <span className="ml-2 text-orange-600 font-bold">{scores.subjectivityScore?.toFixed(2)}</span>
                   </div>
                   <div className="bg-gray-50 rounded-lg p-4">
-                    <ChartBarIcon className="h-6 w-6 text-indigo-600 mr-2 inline" />
+                    <ChartBarIcon className="h-6 w-6 text-orange-600 mr-2 inline" />
                     <span className="font-semibold">Total Words:</span>
-                    <span className="ml-2 text-indigo-600 font-bold">{scores.totalWords}</span>
+                    <span className="ml-2 text-orange-600 font-bold">{scores.totalWords}</span>
                   </div>
                   <div className="bg-gray-50 rounded-lg p-4">
-                    <ChartBarIcon className="h-6 w-6 text-indigo-600 mr-2 inline" />
+                    <ChartBarIcon className="h-6 w-6 text-orange-600 mr-2 inline" />
                     <span className="font-semibold">Unique Words:</span>
-                    <span className="ml-2 text-indigo-600 font-bold">{scores.uniqueWords}</span>
+                    <span className="ml-2 text-orange-600 font-bold">{scores.uniqueWords}</span>
                   </div>
                   <div className="bg-gray-50 rounded-lg p-4">
-                    <ChartBarIcon className="h-6 w-6 text-indigo-600 mr-2 inline" />
+                    <ChartBarIcon className="h-6 w-6 text-orange-600 mr-2 inline" />
                     <span className="font-semibold">Diversity Score:</span>
-                    <span className="ml-2 text-indigo-600 font-bold">{scores.diversityScore?.toFixed(2)}</span>
+                    <span className="ml-2 text-orange-600 font-bold">{scores.diversityScore?.toFixed(2)}</span>
                     <div className="mt-2 text-gray-700">{scores.diversityFeedback}</div>
                   </div>
                   <div className="bg-gray-50 rounded-lg p-4">
-                    <ChartBarIcon className="h-6 w-6 text-indigo-600 mr-2 inline" />
+                    <ChartBarIcon className="h-6 w-6 text-orange-600 mr-2 inline" />
                     <span className="font-semibold">Avg. Sentence Length:</span>
-                    <span className="ml-2 text-indigo-600 font-bold">{scores.avgSentenceLength?.toFixed(2)} words</span>
+                    <span className="ml-2 text-orange-600 font-bold">{scores.avgSentenceLength?.toFixed(2)} words</span>
                     <div className="mt-2 text-gray-700">Conjunctions: {scores.conjunctionCount}</div>
                     <div className="mt-2 text-gray-700">{scores.complexityFeedback}</div>
                   </div>

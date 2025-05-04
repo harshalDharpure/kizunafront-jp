@@ -17,7 +17,7 @@ function App() {
           <div className="container mx-auto px-6 py-4 flex justify-between items-center">
             <div className="flex items-center space-x-3">
               <Link to="/" className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center shadow-md">
+                <div className="w-10 h-10 bg-orange-600 rounded-lg flex items-center justify-center shadow-md">
                   <ChatBubbleLeftRightIcon className="h-6 w-6 text-white" />
                 </div>
                 <span className="text-xl font-bold text-gray-900 tracking-tight">
@@ -26,23 +26,21 @@ function App() {
               </Link>
             </div>
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#features" className="text-gray-600 hover:text-indigo-600 transition-colors duration-200 font-medium">Features</a>
-              <a href="#technology" className="text-gray-600 hover:text-indigo-600 transition-colors duration-200 font-medium">Technology</a>
-              <a href="#audience" className="text-gray-600 hover:text-indigo-600 transition-colors duration-200 font-medium">For Whom</a>
-              <a href="#services" className="text-gray-600 hover:text-indigo-600 transition-colors duration-200 font-medium">Services</a>
+              <a href="#features" className="text-gray-600 hover:text-orange-600 transition-colors duration-200 font-medium">Features</a>
+              <a href="#technology" className="text-gray-600 hover:text-orange-600 transition-colors duration-200 font-medium">Technology</a>
             </div>
             {isAuthenticated ? (
               <div className="flex items-center space-x-4">
                 <span className="text-gray-600">Welcome, {user?.name}</span>
                 <Link 
                   to="/dashboard"
-                  className="text-gray-600 hover:text-indigo-600 transition-colors duration-200 font-medium"
+                  className="text-gray-600 hover:text-orange-600 transition-colors duration-200 font-medium"
                 >
                   Dashboard
                 </Link>
                 <button 
                   onClick={logout}
-                  className="bg-indigo-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-indigo-700 transition-colors duration-200 shadow-md hover:shadow-lg"
+                  className="bg-orange-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-orange-700 transition-colors duration-200 shadow-md hover:shadow-lg"
                 >
                   Logout
                 </button>
@@ -51,13 +49,13 @@ function App() {
               <div className="flex items-center space-x-4">
                 <a 
                   href="/login"
-                  className="text-gray-600 hover:text-indigo-600 transition-colors duration-200 font-medium"
+                  className="text-gray-600 hover:text-orange-600 transition-colors duration-200 font-medium"
                 >
                   Login
                 </a>
                 <a 
                   href="/signup"
-                  className="bg-indigo-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-indigo-700 transition-colors duration-200 shadow-md hover:shadow-lg"
+                  className="bg-orange-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-orange-700 transition-colors duration-200 shadow-md hover:shadow-lg"
                 >
                   Sign Up
                 </a>
