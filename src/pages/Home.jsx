@@ -93,7 +93,7 @@ const Home = () => {
                 </div>
               )}
               <YouTube
-                videoId="G6azfVuuIBQ"
+                videoId="Xze21jNecHc"
                 opts={videoOptions}
                 onPlay={() => setIsVideoPlaying(true)}
                 className="absolute inset-0 w-full h-full"
