@@ -79,6 +79,19 @@ const Home = () => {
             </button>
           </div>
 
+          {/* Product Hunt Badge */}
+          <div className="mb-8">
+            <a href="https://www.producthunt.com/posts/kizuna?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-kizuna" target="_blank" rel="noopener noreferrer">
+              <img 
+                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=960544&theme=light&t=1746341685975" 
+                alt="Kizuna - From words to wellbeing, analyze cognitive from conversation | Product Hunt" 
+                style={{ width: '250px', height: '54px' }} 
+                width="250" 
+                height="54" 
+              />
+            </a>
+          </div>
+
           {/* YouTube Video */}
           <div ref={videoRef} className="w-full max-w-4xl rounded-xl overflow-hidden shadow-2xl border-2 border-white/20">
             <div className="relative w-full aspect-video bg-gray-900">
