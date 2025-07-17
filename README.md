@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Kizunabot Frontend
 
 A modern, professional homepage for Kizunabot, an AI-powered platform that detects early signs of cognitive decline through natural conversation.
@@ -52,3 +53,7 @@ A modern, professional homepage for Kizunabot, an AI-powered platform that detec
 ## License
 
 This project is licensed under the MIT License.
+=======
+# kizunafront-jp
+Frontend Part
+>>>>>>> 62409a62c055abadbadfd8285e841f5d20f38309
