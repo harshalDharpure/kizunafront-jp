@@ -47,18 +47,17 @@ const Home = () => {
           {/* Tagline */}
           <div className="inline-flex items-center bg-orange-800/30 border border-orange-700 rounded-full px-4 py-1 mb-6">
             <ShieldCheckIcon className="h-5 w-5 mr-2" />
-            <span className="text-sm font-medium">Privacy-first cognitive analysis</span>
+            <span className="text-sm font-medium">プライバシー重視の認知分析</span>
           </div>
 
           {/* Main heading */}
           <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight text-center">
-            Transforming <span className="text-orange-300">Speech</span> into <br />
-            Cognitive <span className="text-orange-300">Insights</span>
+            <span className="text-orange-300">音声</span>を<br />認知<span className="text-orange-300">インサイト</span>へ変換
           </h1>
 
           {/* Subheading */}
           <p className="text-xl text-orange-100 mb-10 max-w-2xl mx-auto text-center">
-            Detect cognitive changes through natural conversation patterns.
+            日常会話から認知の変化を検出します。
           </p>
 
           {/* CTA buttons */}
@@ -67,7 +66,7 @@ const Home = () => {
               to="/signup"
               className="bg-white text-orange-700 px-8 py-3 rounded-full font-semibold shadow hover:bg-orange-50 transition flex items-center justify-center"
             >
-              Get Started
+              はじめる
               <ArrowRightIcon className="h-5 w-5 ml-2" />
             </Link>
             <button 
@@ -75,7 +74,7 @@ const Home = () => {
               className="border-2 border-white/30 px-8 py-3 rounded-full font-medium hover:bg-white/10 transition flex items-center justify-center"
             >
               <PlayCircleIcon className="h-5 w-5 mr-2" />
-              Watch Demo
+              デモを見る
             </button>
           </div>
 
@@ -123,11 +122,11 @@ const Home = () => {
           <div className="bg-white rounded-xl shadow-lg p-6 grid grid-cols-2 gap-6 divide-x divide-gray-100">
             <div className="text-center px-4">
               <div className="text-3xl font-bold text-orange-700">100%</div>
-              <div className="text-gray-600 mt-1">Privacy Focused</div>
+              <div className="text-gray-600 mt-1">プライバシー重視</div>
             </div>
             <div className="text-center px-4">
               <div className="text-3xl font-bold text-orange-700">24/7</div>
-              <div className="text-gray-600 mt-1">Passive Monitoring</div>
+              <div className="text-gray-600 mt-1">パッシブモニタリング</div>
             </div>
           </div>
         </div>
@@ -138,10 +137,10 @@ const Home = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-              Natural Speech Analysis for <span className="text-orange-600">Cognitive Wellness</span>
+              認知健康のための<span className="text-orange-600">自然な音声分析</span>
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-              AI-powered tool that monitors speech patterns to identify early cognitive changes through everyday interactions.
+              AIが日常会話から認知の変化を見守ります。
             </p>
           </div>
         </div>
@@ -156,7 +155,7 @@ const Home = () => {
                 <div className="aspect-w-16 aspect-h-9 bg-white rounded-lg shadow overflow-hidden">
                   <img 
                     src="/grandma2.png" 
-                    alt="Elderly woman smiling while using tablet"
+                    alt="タブレットを使う高齢女性"
                     className="object-cover w-full h-full"
                   />
                 </div>
@@ -164,29 +163,29 @@ const Home = () => {
             </div>
             <div className="lg:w-1/2">
               <h2 className="text-3xl font-bold mb-6 text-gray-900">
-                Why <span className="text-orange-600">Kizunabot</span> Stands Out
+                なぜ<span className="text-orange-600">Kizunabot</span>が選ばれるのか
               </h2>
               <p className="text-gray-600 mb-8 leading-relaxed">
-                Traditional cognitive screenings are often clinical, infrequent, and can be stressful. Kizunabot revolutionizes this approach by analyzing everyday conversations in a natural, unobtrusive way.
+                従来の認知検査は臨床的でストレスが多いですが、Kizunabotは自然な会話から優しく分析します。
               </p>
               <ul className="space-y-4">
                 <li className="flex items-start">
                   <div className="flex-shrink-0 bg-orange-100 rounded-full p-2 mt-1 mr-4">
                     <HeartIcon className="h-5 w-5 text-orange-700" />
                   </div>
-                  <span className="text-gray-700">Continuous monitoring without disrupting daily life</span>
+                  <span className="text-gray-700">日常生活を妨げず継続的に見守り</span>
                 </li>
                 <li className="flex items-start">
                   <div className="flex-shrink-0 bg-orange-100 rounded-full p-2 mt-1 mr-4">
                     <DevicePhoneMobileIcon className="h-5 w-5 text-orange-700" />
                   </div>
-                  <span className="text-gray-700">Accessible through everyday devices</span>
+                  <span className="text-gray-700">どこでも使える</span>
                 </li>
                 <li className="flex items-start">
                   <div className="flex-shrink-0 bg-orange-100 rounded-full p-2 mt-1 mr-4">
                     <AcademicCapIcon className="h-5 w-5 text-orange-700" />
                   </div>
-                  <span className="text-gray-700">Backed by cutting-edge NLP research</span>
+                  <span className="text-gray-700">最先端NLP研究に基づく</span>
                 </li>
               </ul>
             </div>
@@ -198,29 +197,29 @@ const Home = () => {
       <section className="py-20 bg-white" id="technology">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4 text-gray-900">Key Cognitive Indicators</h2>
+            <h2 className="text-3xl font-bold mb-4 text-gray-900">キー認知指標</h2>
             <p className="text-gray-600">
-              Analyzing multiple dimensions of speech for comprehensive cognitive health insights.
+              音声の複数の次元を分析して包括的な認知健康インサイトを提供します。
             </p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
             <FeatureCard
               icon={<ChartBarIcon className="h-10 w-10 text-orange-600" />}
-              title="Lexical Diversity"
-              description="Measures vocabulary richness and complexity."
+              title="語彙多様性"
+              description="語彙の豊かさと複雑さを測定します。"
               color="bg-orange-50"
             />
             <FeatureCard
               icon={<ChatBubbleLeftRightIcon className="h-10 w-10 text-orange-600" />}
-              title="Conversational Flow"
-              description="Analyzes topic maintenance and coherence."
+              title="会話流れ"
+              description="トピックの維持と一貫性を分析します。"
               color="bg-orange-50"
             />
             <FeatureCard
               icon={<LightBulbIcon className="h-10 w-10 text-orange-600" />}
-              title="Memory Indicators"
-              description="Detects patterns of repetition and recall."
+              title="記憶指標"
+              description="繰り返しや記憶のパターンを検出します。"
               color="bg-orange-50"
             />
           </div>
