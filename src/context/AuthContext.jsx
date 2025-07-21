@@ -22,10 +22,8 @@ export const AuthProvider = ({ children }) => {
     if (token && userData) {
       setIsAuthenticated(true);
       setUser(JSON.parse(userData));
-    } else {
-      logout();
     }
-  }, [logout]);
+  }, []);
 
   const login = (userData, token) => {
     localStorage.setItem('token', token);

@@ -46,18 +46,18 @@ function App() {
             </div>
           ) : (
             <div className="flex items-center space-x-4">
-              <a
-                href="/login"
+              <Link
+                to="/login"
                 className="text-gray-600 hover:text-orange-600 transition-colors duration-200 font-medium"
               >
                 ログイン
-              </a>
-              <a
-                href="/signup"
+              </Link>
+              <Link
+                to="/signup"
                 className="bg-orange-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-orange-700 transition-colors duration-200 shadow-md hover:shadow-lg"
               >
                 新規登録
-              </a>
+              </Link>
             </div>
           )}
         </div>
