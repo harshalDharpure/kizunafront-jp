@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Navigate, Link } from 'react-router-dom'
+import { Routes, Route, Navigate, Link } from 'react-router-dom'
 import { ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline'
 import { useAuth } from './context/AuthContext'
 import Home from './pages/Home'
@@ -10,80 +10,78 @@ function App() {
   const { isAuthenticated, user, logout } = useAuth()
 
   return (
-    <Router>
-      <div className="min-h-screen bg-white flex flex-col font-sans">
-        {/* Navigation */}
-        <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
-          <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div className="flex items-center space-x-3">
-              <Link to="/" className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-orange-600 rounded-lg flex items-center justify-center shadow-md">
-                  <ChatBubbleLeftRightIcon className="h-6 w-6 text-white" />
-                </div>
-                <span className="text-xl font-bold text-gray-900 tracking-tight">
-                  <span className="text-2xl">絆</span> KizunaBot
-                </span>
-              </Link>
-            </div>
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="#features" className="text-gray-600 hover:text-orange-600 transition-colors duration-200 font-medium">Features</a>
-              <a href="#technology" className="text-gray-600 hover:text-orange-600 transition-colors duration-200 font-medium">Technology</a>
-            </div>
-            {isAuthenticated ? (
-              <div className="flex items-center space-x-4">
-                <span className="text-gray-600">Welcome, {user?.name}</span>
-                <Link 
-                  to="/dashboard"
-                  className="text-gray-600 hover:text-orange-600 transition-colors duration-200 font-medium"
-                >
-                  Dashboard
-                </Link>
-                <button 
-                  onClick={logout}
-                  className="bg-orange-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-orange-700 transition-colors duration-200 shadow-md hover:shadow-lg"
-                >
-                  Logout
-                </button>
+    <div className="min-h-screen bg-white flex flex-col font-sans">
+      {/* Navigation */}
+      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
+        <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+          <div className="flex items-center space-x-3">
+            <Link to="/" className="flex items-center space-x-3">
+              <div className="w-10 h-10 bg-orange-600 rounded-lg flex items-center justify-center shadow-md">
+                <ChatBubbleLeftRightIcon className="h-6 w-6 text-white" />
               </div>
-            ) : (
-              <div className="flex items-center space-x-4">
-                <a 
-                  href="/login"
-                  className="text-gray-600 hover:text-orange-600 transition-colors duration-200 font-medium"
-                >
-                  Login
-                </a>
-                <a 
-                  href="/signup"
-                  className="bg-orange-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-orange-700 transition-colors duration-200 shadow-md hover:shadow-lg"
-                >
-                  Sign Up
-                </a>
-              </div>
-            )}
+              <span className="text-xl font-bold text-gray-900 tracking-tight">
+                <span className="text-2xl">絆</span> KizunaBot
+              </span>
+            </Link>
           </div>
-        </nav>
+          <div className="hidden md:flex items-center space-x-8">
+            <a href="#features" className="text-gray-600 hover:text-orange-600 transition-colors duration-200 font-medium">機能</a>
+            <a href="#technology" className="text-gray-600 hover:text-orange-600 transition-colors duration-200 font-medium">テクノロジー</a>
+          </div>
+          {isAuthenticated ? (
+            <div className="flex items-center space-x-4">
+              <span className="text-gray-600">{user?.name}さん、ようこそ</span>
+              <Link
+                to="/dashboard"
+                className="text-gray-600 hover:text-orange-600 transition-colors duration-200 font-medium"
+              >
+                ダッシュボード
+              </Link>
+              <button
+                onClick={logout}
+                className="bg-orange-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-orange-700 transition-colors duration-200 shadow-md hover:shadow-lg"
+              >
+                ログアウト
+              </button>
+            </div>
+          ) : (
+            <div className="flex items-center space-x-4">
+              <a
+                href="/login"
+                className="text-gray-600 hover:text-orange-600 transition-colors duration-200 font-medium"
+              >
+                ログイン
+              </a>
+              <a
+                href="/signup"
+                className="bg-orange-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-orange-700 transition-colors duration-200 shadow-md hover:shadow-lg"
+              >
+                新規登録
+              </a>
+            </div>
+          )}
+        </div>
+      </nav>
 
-        {/* Main Content */}
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route 
-              path="/login" 
-              element={isAuthenticated ? <Navigate to="/dashboard" /> : <Login />} 
-            />
-            <Route 
-              path="/signup" 
-              element={isAuthenticated ? <Navigate to="/dashboard" /> : <Signup />} 
-            />
-            <Route 
-              path="/dashboard" 
-              element={isAuthenticated ? <Dashboard /> : <Navigate to="/login" />} 
-            />
-          </Routes>
-        </main>
-      </div>
-    </Router>
+      {/* Main Content */}
+      <main className="flex-grow">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/login"
+            element={isAuthenticated ? <Navigate to="/dashboard" /> : <Login />}
+          />
+          <Route
+            path="/signup"
+            element={isAuthenticated ? <Navigate to="/dashboard" /> : <Signup />}
+          />
+          <Route
+            path="/dashboard"
+            element={isAuthenticated ? <Dashboard /> : <Navigate to="/login" />}
+          />
+        </Routes>
+      </main>
+    </div>
   )
 }
 

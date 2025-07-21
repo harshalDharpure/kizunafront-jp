@@ -4,7 +4,7 @@ import { ArrowUpTrayIcon, ChartBarIcon, MicrophoneIcon, StopIcon, ClockIcon } fr
 import GeminiInsights from '../components/GeminiInsights';
 
 const Dashboard = () => {
-  const { user } = useAuth();
+  const { user, authFetch } = useAuth();
   const [file, setFile] = useState(null);
   const [isUploading, setIsUploading] = useState(false);
   const [scores, setScores] = useState(null);
@@ -19,16 +19,11 @@ const Dashboard = () => {
 
   useEffect(() => {
     fetchRecordings();
-  }, []);
+  }, [authFetch]);
 
   const fetchRecordings = async () => {
     try {
-      const token = localStorage.getItem('token');
-      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/analyze/recordings`, {
-        headers: {
-          'Authorization': `Bearer ${token}`
-        }
-      });
+      const response = await authFetch(`${import.meta.env.VITE_BACKEND_URL}/api/analyze/recordings`);
       const data = await response.json();
       if (response.ok) {
         setRecordings(data);
@@ -119,15 +114,8 @@ const Dashboard = () => {
     formData.append('audio', file);
 
     try {
-      const token = localStorage.getItem('token');
-      if (!token) {
-        throw new Error('Authentication token not found');
-      }
-      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/analyze/audio`, {
+      const response = await authFetch(`${import.meta.env.VITE_BACKEND_URL}/api/analyze/audio`, {
         method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${token}`
-        },
         body: formData,
       });
 
@@ -163,14 +151,14 @@ const Dashboard = () => {
       <div className="max-w-4xl mx-auto">
         <div className="bg-white shadow rounded-lg p-6">
           <div className="mb-8">
-            <h1 className="text-3xl font-bold text-gray-900">Welcome, {user?.name}</h1>
-            <p className="mt-2 text-gray-600">Record or upload your audio for analysis</p>
+            <h1 className="text-3xl font-bold text-gray-900">{user?.name}さん、ようこそ</h1>
+            <p className="mt-2 text-gray-600">分析のために音声を録音またはアップロードしてください</p>
           </div>
 
           {/* Recording History */}
           {recordings.length > 0 && (
             <div className="mb-8">
-              <h2 className="text-xl font-semibold text-gray-900 mb-4">Your Recordings</h2>
+              <h2 className="text-xl font-semibold text-gray-900 mb-4">録音履歴</h2>
               <div className="space-y-4">
                 {recordings.map((recording) => (
                   <div key={recording._id} className="bg-gray-50 rounded-lg p-4">
@@ -183,7 +171,7 @@ const Dashboard = () => {
                         onClick={() => handleViewAnalysis(recording)}
                         className="text-orange-600 hover:text-orange-700 font-medium"
                       >
-                        View Analysis
+                        分析を見る
                       </button>
                     </div>
                   </div>
@@ -201,13 +189,13 @@ const Dashboard = () => {
                     isRecording ? 'bg-red-100' : 'bg-orange-100'
                   }`}>
                     {isRecording ? (
-                      <StopIcon 
-                        className="h-8 w-8 text-red-600 cursor-pointer" 
+                      <StopIcon
+                        className="h-8 w-8 text-red-600 cursor-pointer"
                         onClick={stopRecording}
                       />
                     ) : (
-                      <MicrophoneIcon 
-                        className="h-8 w-8 text-orange-600 cursor-pointer" 
+                      <MicrophoneIcon
+                        className="h-8 w-8 text-orange-600 cursor-pointer"
                         onClick={startRecording}
                       />
                     )}
@@ -219,7 +207,7 @@ const Dashboard = () => {
                   )}
                 </div>
                 <p className="mt-4 text-sm font-medium text-gray-900">
-                  {isRecording ? `Recording... ${formatTime(recordingTime)}` : 'Click to Record'}
+                  {isRecording ? `録音中... ${formatTime(recordingTime)}` : 'クリックして録音'}
                 </p>
               </div>
             </div>
@@ -230,7 +218,7 @@ const Dashboard = () => {
                 <ArrowUpTrayIcon className="h-12 w-12 text-gray-400" />
                 <div className="mt-4">
                   <label className="cursor-pointer bg-orange-600 text-white px-4 py-2 rounded-md hover:bg-orange-700">
-                    <span>Select Audio File</span>
+                    <span>音声ファイルを選択</span>
                     <input
                       type="file"
                       accept=".wav"
@@ -240,7 +228,7 @@ const Dashboard = () => {
                   </label>
                 </div>
                 <p className="mt-2 text-sm text-gray-500">
-                  {file ? file.name : 'No file selected'}
+                  {file ? file.name : 'ファイルが選択されていません'}
                 </p>
                 {error && (
                   <p className="mt-2 text-sm text-red-600">{error}</p>
@@ -259,58 +247,58 @@ const Dashboard = () => {
                     : 'bg-orange-600 hover:bg-orange-700'
                 }`}
               >
-                {isUploading ? 'Analyzing...' : 'Analyze Recording'}
+                {isUploading ? '分析中...' : '録音を分析'}
               </button>
             </div>
 
             {/* Results Section */}
             {scores && (
               <div className="mt-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">Analysis Results</h2>
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">分析結果</h2>
                 <div className="mb-6">
-                  <h3 className="text-lg font-semibold text-gray-700">Transcribed Text</h3>
+                  <h3 className="text-lg font-semibold text-gray-700">文字起こしされたテキスト</h3>
                   <pre className="bg-gray-100 rounded-lg p-4 whitespace-pre-wrap text-gray-900">{scores.transcribedText}</pre>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="bg-gray-50 rounded-lg p-4">
                     <ChartBarIcon className="h-6 w-6 text-orange-600 mr-2 inline" />
-                    <span className="font-semibold">Polarity Score:</span>
+                    <span className="font-semibold">極性スコア:</span>
                     <span className="ml-2 text-orange-600 font-bold">{scores.polarityScore?.toFixed(2)}</span>
                   </div>
                   <div className="bg-gray-50 rounded-lg p-4">
                     <ChartBarIcon className="h-6 w-6 text-orange-600 mr-2 inline" />
-                    <span className="font-semibold">Subjectivity Score:</span>
+                    <span className="font-semibold">主観性スコア:</span>
                     <span className="ml-2 text-orange-600 font-bold">{scores.subjectivityScore?.toFixed(2)}</span>
                   </div>
                   <div className="bg-gray-50 rounded-lg p-4">
                     <ChartBarIcon className="h-6 w-6 text-orange-600 mr-2 inline" />
-                    <span className="font-semibold">Total Words:</span>
+                    <span className="font-semibold">総単語数:</span>
                     <span className="ml-2 text-orange-600 font-bold">{scores.totalWords}</span>
                   </div>
                   <div className="bg-gray-50 rounded-lg p-4">
                     <ChartBarIcon className="h-6 w-6 text-orange-600 mr-2 inline" />
-                    <span className="font-semibold">Unique Words:</span>
+                    <span className="font-semibold">ユニークな単語数:</span>
                     <span className="ml-2 text-orange-600 font-bold">{scores.uniqueWords}</span>
                   </div>
                   <div className="bg-gray-50 rounded-lg p-4">
                     <ChartBarIcon className="h-6 w-6 text-orange-600 mr-2 inline" />
-                    <span className="font-semibold">Diversity Score:</span>
+                    <span className="font-semibold">多様性スコア:</span>
                     <span className="ml-2 text-orange-600 font-bold">{scores.diversityScore?.toFixed(2)}</span>
                     <div className="mt-2 text-gray-700">{scores.diversityFeedback}</div>
                   </div>
                   <div className="bg-gray-50 rounded-lg p-4">
                     <ChartBarIcon className="h-6 w-6 text-orange-600 mr-2 inline" />
-                    <span className="font-semibold">Avg. Sentence Length:</span>
+                    <span className="font-semibold">平均文長:</span>
                     <span className="ml-2 text-orange-600 font-bold">{scores.avgSentenceLength?.toFixed(2)} words</span>
-                    <div className="mt-2 text-gray-700">Conjunctions: {scores.conjunctionCount}</div>
+                    <div className="mt-2 text-gray-700">接続詞: {scores.conjunctionCount}</div>
                     <div className="mt-2 text-gray-700">{scores.complexityFeedback}</div>
                   </div>
                 </div>
 
                 {/* Gemini Insights Section */}
                 <div className="mt-12">
-                  <GeminiInsights 
-                    analysisData={scores} 
+                  <GeminiInsights
+                    analysisData={scores}
                     recordingId={currentRecordingId}
                   />
                 </div>

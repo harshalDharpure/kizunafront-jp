@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { useAuth } from '../context/AuthContext';
 import { LightBulbIcon, ChatBubbleLeftRightIcon, DocumentTextIcon, SparklesIcon } from '@heroicons/react/24/outline';
 
 const GeminiInsights = ({ analysisData, recordingId }) => {
+  const { authFetch } = useAuth();
   const [insights, setInsights] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -10,18 +12,14 @@ const GeminiInsights = ({ analysisData, recordingId }) => {
     if (recordingId && analysisData) {
       fetchInsights();
     }
-  }, [recordingId, analysisData]);
+  }, [recordingId, analysisData, authFetch]);
 
   const fetchInsights = async () => {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/gemini/analyze`, {
+      const response = await authFetch(`${import.meta.env.VITE_BACKEND_URL}/api/gemini/analyze`, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${localStorage.getItem('token')}`
-        },
         body: JSON.stringify({
           recordingId,
           analysisData
@@ -72,14 +70,14 @@ const GeminiInsights = ({ analysisData, recordingId }) => {
   return (
     <div className="max-w-4xl mx-auto p-6">
       <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold text-gray-900 mb-2">AI-Powered Communication Insights</h2>
-        <p className="text-gray-600">Get simple, easy-to-understand analysis of your communication style</p>
+        <h2 className="text-3xl font-bold text-gray-900 mb-2">AIによるコミュニケーションのインサイト</h2>
+        <p className="text-gray-600">あなたのコミュニケーションスタイルをシンプルで分かりやすく分析します</p>
       </div>
 
       {loading && (
         <div className="text-center py-8">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-600 mx-auto"></div>
-          <p className="mt-4 text-gray-600">Analyzing your communication style...</p>
+          <p className="mt-4 text-gray-600">コミュニケーションスタイルを分析中...</p>
         </div>
       )}
 
@@ -90,7 +88,7 @@ const GeminiInsights = ({ analysisData, recordingId }) => {
             onClick={fetchInsights}
             className="mt-4 text-orange-600 hover:text-orange-700 font-medium"
           >
-            Try Again
+            再試行
           </button>
         </div>
       )}
@@ -98,24 +96,24 @@ const GeminiInsights = ({ analysisData, recordingId }) => {
       {insights && (
         <div className="space-y-6">
           <InsightSection
-            title="Tone and Emotion"
+            title="トーンと感情"
             icon={ChatBubbleLeftRightIcon}
-            content={insights.split('1. Tone and Emotion')[1]?.split('2.')[0] || 'No data available'}
+            content={insights.split('1. Tone and Emotion')[1]?.split('2.')[0] || '利用可能なデータがありません'}
           />
           <InsightSection
-            title="Vocabulary and Style"
+            title="語彙とスタイル"
             icon={DocumentTextIcon}
-            content={insights.split('2. Vocabulary and Style')[1]?.split('3.')[0] || 'No data available'}
+            content={insights.split('2. Vocabulary and Style')[1]?.split('3.')[0] || '利用可能なデータがありません'}
           />
           <InsightSection
-            title="Sentence Structure"
+            title="文の構造"
             icon={LightBulbIcon}
-            content={insights.split('3. Sentence Structure')[1]?.split('4.')[0] || 'No data available'}
+            content={insights.split('3. Sentence Structure')[1]?.split('4.')[0] || '利用可能なデータがありません'}
           />
           <InsightSection
-            title="Overall Style"
+            title="全体的なスタイル"
             icon={SparklesIcon}
-            content={insights.split('4. Overall Style')[1] || 'No data available'}
+            content={insights.split('4. Overall Style')[1] || '利用可能なデータがありません'}
           />
         </div>
       )}
